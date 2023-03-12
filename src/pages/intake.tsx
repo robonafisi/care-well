@@ -16,24 +16,7 @@ const Intake: NextPage = () => {
         <h1 className={styles.title}>
           Intake
         </h1>
-
-        
-
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="/__repl"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Built on
-          <span className={styles.logo}>
-            <Image src="/replit.svg" alt="Replit Logo" width={20} height={18} />
-          </span>
-          Replit
-        </a>
-      </footer>
     </div>
   )
 }

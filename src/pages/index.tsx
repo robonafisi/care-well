@@ -3,8 +3,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Fragment, useState, useEffect } from "react"
-import CircularProgress from '@mui/material/CircularProgress'
-import { TextareaAutosize } from '@mui/base'
 
 
 const Home: NextPage = () => {
@@ -102,7 +100,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Dr. G</title>
+        <title>CareWell</title>
         <meta name="description" content="Copilot to help doctors diagnose and prioritise their patients." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -130,15 +128,9 @@ const Home: NextPage = () => {
               <textarea 
               value={userMessage}
               onChange={e => setUserMessage(e.target.value)}
-              className='border text-sm rounded-lg block h-190 resize-x p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500'
+              className='border text-sm rounded-lg block w-full h-25 p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500'
               aria-label="Input">
               </textarea>
-              {/* <TextareaAutosize
-                value={userMessage}
-                onChange={e => setUserMessage(e.target.value)}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                aria-label="Input"
-              /> */}
             </div>
             <div className="flex">
               {step && <button onClick={step.fn} className={buttonClass}>{step.buttonText}</button>}
