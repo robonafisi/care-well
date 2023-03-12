@@ -121,9 +121,6 @@ const Home: NextPage = () => {
         </div>
         <div className="flex" style={{ height: '80vh' }} >
           <div aria-label='left' className='flex flex-col' style={{ width: '50%' }}>
-            <div aria-label='messages' style={{ height: '50vh', overflow: 'scroll' }}>
-              {messages.slice(1).map((m, i) => <Fragment key={i}><div><span className='text-white ml-8'>{m.role}: </span><p className='text-white ml-5'>{m.content}</p></div><br />        </Fragment>)}
-            </div>
             <div>
               <textarea 
               value={userMessage}
@@ -140,6 +137,9 @@ const Home: NextPage = () => {
                 <button className={buttonClass} onClick={suggestTreatment}>suggest treatment</button>
                 <button className={buttonClass} onClick={suggestConfidence}>suggest confidence</button>
               </>}
+            </div>
+            <div aria-label='messages' style={{ height: '50vh', overflow: 'scroll' }}>
+              {messages.slice(1).map((m, i) => <Fragment key={i}><div><span className='text-white ml-8'>{m.role}: </span><p className='text-white ml-5'>{m.content}</p></div><br />        </Fragment>)}
             </div>
           </div>
           <div aria-label='right' style={{ width: '50%' }}>
@@ -181,7 +181,6 @@ const Home: NextPage = () => {
 const buttonClass = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded mr-4 mt-3 ml-3"
 const examplePatientDescription = "A 76-year-old man with known heart disease is admitted to the hospital because of new onset of shortness of breath, fatigue, and atrial fibrillation. He denies weight loss, nervousness, and insomnia. There is no evidence of an acute myocardialinfarction or pulmonary embolus."
 const exampleTestResults = `On physical examination, his heart rate is 136 beats per minute; beats are irregularlyirregular; and fine rales are heard at both lung bases. His blood pressure is 152/82 mm Hg, without orthostaticchanges.
-
 Results of laboratory tests indicate a hemoglobin level of 14.6 g/dL, a TSH level of 0.02 μU/mL (normal, 0.45to 4.5 μU/mL), and an FT4 level of 3.3 ng/dL (normal, 0.61 to 1.76 ng/dL).`
 
 const promptQualify = "You are a helpful assistant at a doctor office. You help qualify the user (patient) for diagnosis."
