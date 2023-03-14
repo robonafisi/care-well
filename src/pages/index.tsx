@@ -58,7 +58,7 @@ const Home: NextPage = () => {
   }
   const steps = { 0: { fn: rewriteThis, buttonText: 'rewrite this' }, 1: { fn: sendTest, buttonText: 'send test results' }, 2: { fn: narrow, buttonText: 'narrow' } }
   const suggestDiagnoses = () => {
-    const messages0 = [...messages, { role: "user", "content": `suggest diagnoses for a doctor to review` }]
+    const messages0 = [...messages, { role: "user", "content": `what would the most likely diagnoses be for a doctor to review` }]
     send(messages0, () => {
       setUserMessage("")
     }, setDiagnoses)
@@ -121,11 +121,14 @@ const Home: NextPage = () => {
         </div>
         <div className="flex" style={{ height: '80vh' }} >
           <div aria-label='left' className='flex flex-col' style={{ width: '50%' }}>
-            <div>
+          <div className='flex content-center justify-center'>
+            <h2 className='text-white font-bold text-3xl mb-5'>Chat</h2>
+            </div>
+            <div className='min-h-fit'>
               <textarea 
               value={userMessage}
               onChange={e => setUserMessage(e.target.value)}
-              className='border text-sm rounded-lg block w-full h-25 p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500'
+              className='border text-sm rounded-lg block w-full h-full h-25 p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500'
               aria-label="Input">
               </textarea>
             </div>
@@ -146,7 +149,7 @@ const Home: NextPage = () => {
             <div className='flex content-center justify-center'>
             <h2 className='text-white font-bold text-3xl mb-5'>Findings</h2>
             </div>
-            <div className="border-4 border-amber-500 ml-3 p-5 mr-5 rounded-md">
+            <div className="border-4 border-amber-500 ml-3 p-3 mr-3 rounded-md">
               <ul>
                 <li className='text-white'>{findings}</li>
                 <br />
