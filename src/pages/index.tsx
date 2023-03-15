@@ -106,8 +106,8 @@ const Home: NextPage = () => {
       </Head>
 
       <div>
-        <button onClick={toggle} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-white">Instructions</button>
-        {open && <blockquote className="p-4 my-4 border-l-4 border-blue-300 bg-blue-50 bg-blue-100">Welcome to CoPilot for Doctors! I’ll be your copilot for this consultation. I’m capable of summarizing information, x, and y.
+        <button onClick={toggle} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-t-lg text-white">Instructions</button>
+        {open && <blockquote className="mb-9 p-4 border-l-4 border-blue-400 bg-blue-800 text-white">Welcome to CoPilot for Doctors! I’ll be your copilot for this consultation. I’m capable of summarizing information, x, and y.
           Over the course of our conversation, I’ll present a working model of our findings in the area below. You can interact with our findings to change, edit, or clarify information.</blockquote>}
       </div>
       <main>
